@@ -373,11 +373,13 @@ shinyUI(navbarPage(title = img(src="HR.LOGOred3_cropped.png", height = "40px"), 
                                                                width = "100%"
                                                   ),
                                                   selectizeInput("changeAvatar", "Change Icon:",
-                                                                 choices = c("Circle" = "circle", 
+                                                                 choices = c(
+                                                                             # "Traveler" = "traveler",  # not compatible with new FA
                                                                              "Map Marker" = "map-marker", 
                                                                              "Rocket" = "rocket", 
-                                                                             "Paper Plane" = "paper-plane", 
-                                                                             "Leaf" = "leaf")
+                                                                             # "Paper Plane" = "paper-plane",  # not compatible with new FA
+                                                                             "Leaf" = "leaf"),
+                                                                 selected = "rocket"
                                                   ),
                                                   textInput("userName", "Add your name:", value = ""),
                                                   

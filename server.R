@@ -637,17 +637,17 @@ shinyServer(function(input, output, session) {
     # Avatar to use in the visualization
     avatar <- reactive({
         switch(input$changeAvatar,
-               "circle" = "f2be",
+               # "traveler" = "f21d",  # not compatible with new FA
                "map-marker" = "f041",
                "rocket" = "f135",
-               "paper-plane" = "f1d9",
+               # "paper-plane" = "f1d8",  # not compatible with new FA
                "leaf" = "f06c")
     })
     
     colorIcon <- reactive({
         # Automatically change avatar color based on avatar selection
         switch(input$changeAvatar,
-               "circle" = "#0c84e4",      # Blue
+               "traveler" = "#0c84e4",      # Blue
                "map-marker" = "#000000",  # Black
                "rocket" = "#f44141",      # Red
                "paper-plane" = "#663096", # Purple  deeper purple --> #663096
