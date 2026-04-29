@@ -1245,8 +1245,9 @@ shinyServer(function(input, output, session) {
         ), delay(1000, shinyjs::reset("returnpdf"))
     )))
     
-    
-    
-    
+    # Automatically stop the app when the browser tab/window is closed
+    session$onSessionEnded(function() {
+        stopApp()
+    })
     
 })
