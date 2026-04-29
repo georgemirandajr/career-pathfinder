@@ -1,8 +1,3 @@
-# This is the user-interface definition of a Shiny web application.
-# You can find out more about building applications with Shiny here:
-#
-# http://shiny.rstudio.com
-#
 # Developed with R version 3.3.2 (64-bit)
 library(dplyr)
 library(stringr)
@@ -53,72 +48,20 @@ shinyUI(navbarPage(title = img(src="HR.LOGOred3_cropped.png", height = "40px"), 
                             fluidRow(
                                 HTML("
                                      
-                                     <section class='banner'>
-                                     <h2 class='parallax'>CAREER PATHFINDER</h2>
-                                     <p class='parallax_description'>A career path pinpoints your next job, the job
-                                     after that, and beyond.</p>
-                                     </section>
+                                     <section class='banner' style='background-image: url(\"path-birdseye.jpg\"); 
+                                   background-size: cover; 
+                                   background-position: center; 
+                                   padding: 60px 20px; 
+                                   color: white;'>
+        <h2 class='parallax' style='color: white; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;'>
+            CAREER PATHFINDER
+        </h2>
+        <p class='parallax_description'>
+            A career path pinpoints your next job, the job after that, and beyond.
+        </p>
+    </section>
                                      ")
                                 ),
-                            
-                            # tags$head(includeScript("google-analytics.js")),
-                            
-                            # A header level row for the title of the app (if needed)  
-                            # fluidRow(
-                            #     shiny::HTML("<br><br><center> <h1></h1> </center>
-                            #                 <br>
-                            #                 <br>"),
-                            #     style = "height:250px;"),
-                            
-                            # fluidRow(
-                            #     style = "height:250px; padding: 125px 0px;",
-                            #     shiny::HTML("<center> <h1>Welcome to the Career PathFinder</h2></center>"),
-                            #     shiny::HTML("<center> <h5><i>Like stops on a map, a career path pinpoints your next job, 
-                            #                 the job after that, and beyond.</i></h5> </center>")
-                            # ),
-                            
-                            # fluidRow(
-                            #     
-                            #     style = "height:25px;"),
-                            
-                            # fluidRow(
-                            #     column(2),
-                            #     
-                            #     column(3,
-                            #            div(style="display: inline-block;padding: 100px 0px;",
-                            #                HTML("<h3>What <span style='font-weight:bold'>career planning</span> questions are you looking to answer?</h3>")
-                            #            )
-                            #     ),
-                            #     
-                            #     column(5,
-                            #            
-                            #            carouselPanel(
-                            #                # tags$a(href = "#FAQ", 
-                            #                #        tags$img(src = "screen_capture_absenteeism_2.jpg", width = "615px")), # experiment diff size img - fixed height 1080px and width 1900px
-                            #                tags$img(src = "original1.svg", class = "img-responsive center-block"),
-                            #                tags$img(src = "original2.svg", class = "img-responsive center-block"),
-                            #                tags$img(src = "original3.svg", class = "img-responsive center-block"),
-                            #                tags$img(src = "original4.svg", class = "img-responsive center-block"),
-                            #                tags$img(src = "original5.svg", class = "img-responsive center-block")
-                            #                # tags$a(href = "https://geom.shinyapps.io/word", tags$img(src = "screen_capture_word_2.jpg", width = "615px"))
-                            #                
-                            #            )
-                            #     )
-                            # ),
-                            # 
-                            # fluidRow(
-                            #     
-                            #     style = "height:50px;"),
-                            # 
-                            # fluidRow(
-                            #     style = "height:250px;",
-                            #     shiny::HTML("<center> <h4><i>Are you looking to plan a career with the County?</i></h4> </center>"),
-                            #     shiny::HTML("<center> <h4><i>Are you curious about the paths real County employees have taken?</i></h4></center>"),
-                            #     shiny::HTML("<center> <h4><i>Then you're in the right place.</i></h4></center>")
-                            # ),
-                            # 
-                            # # PAGE BREAK
-                            # tags$hr(),
                             
                             # WHAT
                             fluidRow(
@@ -285,16 +228,6 @@ shinyUI(navbarPage(title = img(src="HR.LOGOred3_cropped.png", height = "40px"), 
                                 
                             ),
                             
-                            # Embedded Video from Vimeo on how to use this tool
-                            # fluidRow(
-                            #     column(3),
-                            #     column(6,
-                            #            tags$embed(src = "https://player.vimeo.com/video/8419440",
-                            #                       width = "640", height = "360") 
-                            #     ),
-                            #     column(3)
-                            # ),
-                            
                             fluidRow(
                                 
                                 style = "height:50px;"),
@@ -460,9 +393,9 @@ shinyUI(navbarPage(title = img(src="HR.LOGOred3_cropped.png", height = "40px"), 
                                                        ),
                                                        # Insert Table Output
                                                        introBox(
-                                                           uiOutput("btns"),
-                                                           data.step = 1, 
-                                                           data.intro = "Start by selecting your first career choice from our list of over 2,000 current job classifications."
+                                                       shiny::uiOutput("btns"),
+                                                         data.step = 1,
+                                                         data.intro = "Start by selecting your first career choice from our list of over 2,000 current job classifications."
                                                        )
                                                    )
                                                ),
